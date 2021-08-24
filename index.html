@@ -10,33 +10,27 @@
 
 <body>
     <h1>Hand Cricket</h1>
+    <button onclick="start()">Replay</button>
     <div id="toss">
-        <form id='toss-form'>
-            <input list='toss-options' name='toss' required/>
-            <datalist id='toss-options'>
-                <option value="Heads">
-                <option value="Tails">
-            </datalist>
-            <button type='submit'>Toss</button>
-        </form>
+            <input value='Heads' type='radio' name='toss' />Heads
+            <input value='Tails' type='radio' name='toss' />Tails
+            <button onclick='toss()'>Toss</button>
     </div>
     <div id='choice'>
         <h3>You won the toss</h3>
-        <form id='choice-form'>
-            <input list='choice-options' name='choice' required/>
-            <datalist id='choice-options'>
-                <option value="Batting">
-                <option value="Bowling">
-            </datalist>
-            <button type='submit'>Choose</button>
-        </form>
+            <input value="Batting" type="radio" name='choice' />Batting
+            <input value='Bowling' type='radio' name='choice' />Bowling
+            <button onclick="choice()">Choose</button>
     </div>
     <div id='game-area'>
         <h3>You are <span id='role'></span></h3>
-        <form id='hand-cricket'>
-            <input id='userinput' type='number' min='0' max='6' required/>
-            <button type='submit'>&#9994;</button>
-        </form>
+        <div style="display: flex;flex-direction: row; flex-wrap: wrap;">
+            <form id='hand-cricket'>
+                <input id='userinput' type='number' min='0' max='6' required/>
+                <button type='submit'>&#9994;</button>
+            </form>
+            <h4 style='margin-top: 0;text-align: right;'>Computer &#9994;<span id='computer-hand'></span></h4>
+        </div>
         <div id="score-area">
             <h3 id='user-score'></h3>
             <h3 id='computer-score'></h3>

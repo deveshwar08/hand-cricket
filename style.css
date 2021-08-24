@@ -1,3 +1,7 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
 #choice, #result, #game-area {
     display: none;
 }
