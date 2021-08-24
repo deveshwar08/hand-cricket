@@ -21,13 +21,14 @@
         </form>
     </div>
     <div id='choice'>
+        <h3>You won the toss</h3>
         <form id='choice-form'>
             <input list='choice-options' name='choice' required/>
             <datalist id='choice-options'>
                 <option value="Batting">
                 <option value="Bowling">
             </datalist>
-            <button type='submit'>Toss</button>
+            <button type='submit'>Choose</button>
         </form>
     </div>
     <div id='game-area'>
@@ -36,11 +37,12 @@
             <input id='userinput' type='number' min='0' max='6' required/>
             <button type='submit'>&#9994;</button>
         </form>
+        <div id="score-area">
+            <h3 id='user-score'></h3>
+            <h3 id='computer-score'></h3>
+        </div>
     </div>
-    <div id="score-area">
-        <h3 id='user-score'></h3>
-        <h3 id='computer-score'></h3>
-    </div>
+    
     <h2 id='result'></h2>
 
     <script src="index.js"></script>

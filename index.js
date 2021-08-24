@@ -1,4 +1,3 @@
-const roles = ['Batting', 'Bowling'];
 let userRole = '';
 let userScore = 0;
 let computerRole = '';
@@ -28,6 +27,8 @@ tossForm.addEventListener('submit',e => {
             computerRole = 'Batting';
         }
         document.getElementById('game-area').style.display = 'flex';
+        document.getElementById('toss').style.display = 'none';
+        document.getElementById('choice').style.display = 'none';
         document.getElementById('role').innerHTML = userRole;
     }
     
@@ -37,12 +38,13 @@ choiceForm.addEventListener('submit',ev => {
     ev.preventDefault();
 
     userRole = choiceForm.choice.value;
-    document.getElementById('role').innerHTML = userRole;
     if(userRole == 'Batting')
         computerRole = 'Bowling';
     else
         computerRole = 'Batting';
     document.getElementById('game-area').style.display = 'flex';
+    document.getElementById('toss').style.display = 'none';
+    document.getElementById('choice').style.display = 'none';
 });
 
 
@@ -100,11 +102,7 @@ function calculateScore(userInput){
 
 function gameOver(){
     console.log("Game over");
-    document.getElementById('game-area').style.display = 'none';
-    document.getElementById('score-area').style.display = 'flex';
     document.getElementById('result').style.display = 'flex';
-    document.getElementById('user-score').innerHTML = 'Your Score: '+userScore;
-    document.getElementById('computer-score').innerHTML = "Computer's Score: "+computerScore;
     if(userScore > computerScore)
         document.getElementById('result').innerHTML = "You won";
     else if(computerScore > userScore)
@@ -113,4 +111,11 @@ function gameOver(){
         document.getElementById('result').innerHTML = "Match Tied";
 }
 
+function updateScoreView(){
+    document.getElementById('user-score').innerHTML = 'Your Score: '+userScore;
+    document.getElementById('computer-score').innerHTML = "Computer's Score: "+computerScore;    
+    document.getElementById('role').innerHTML = userRole;
+    setTimeout(updateScoreView, 100);
+}
 document.getElementById('role').innerHTML = userRole;
+updateScoreView();
