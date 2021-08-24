@@ -4,6 +4,7 @@ let computerRole;
 let computerScore;
 let innings;
 let tossWon;
+let gameEnded;
 const tossForm = document.getElementById('toss-form');
 const choiceForm = document.getElementById('choice-form');
 const handCricketForm = document.getElementById('hand-cricket');
@@ -20,7 +21,7 @@ function start() {
     userScore = 0;
     computerRole = '';
     computerScore = 0;
-
+    gameEnded = false;
 }
 
 function toss() {
@@ -70,8 +71,10 @@ function choice() {
 
 handCricketForm.addEventListener('submit', e => {
     e.preventDefault();
-    let userInput = Number(handCricketForm.userinput.value);
-    calculateScore(userInput);
+    if(!gameEnded){
+        let userInput = Number(handCricketForm.userinput.value);
+        calculateScore(userInput);
+    }
 });
 
 function calculateScore(userInput) {
@@ -129,6 +132,7 @@ function gameOver() {
         document.getElementById('result').innerHTML = "You lost";
     else
         document.getElementById('result').innerHTML = "Match Tied";
+    gameEnded = true;    
 }
 
 function updateScoreView() {
