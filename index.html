@@ -10,10 +10,39 @@
 
 <body>
     <h1>Hand Cricket</h1>
-    <form id='hand-cricket'>
-        <input id='userinput' type='number' min='0' max='6'>
-        <button type='submit'>&#9994;</button>
-    </form>
+    <div id="toss">
+        <form id='toss-form'>
+            <input list='toss-options' name='toss' required/>
+            <datalist id='toss-options'>
+                <option value="Heads">
+                <option value="Tails">
+            </datalist>
+            <button type='submit'>Toss</button>
+        </form>
+    </div>
+    <div id='choice'>
+        <form id='choice-form'>
+            <input list='choice-options' name='choice' required/>
+            <datalist id='choice-options'>
+                <option value="Batting">
+                <option value="Bowling">
+            </datalist>
+            <button type='submit'>Toss</button>
+        </form>
+    </div>
+    <div id='game-area'>
+        <h3>You are <span id='role'></span></h3>
+        <form id='hand-cricket'>
+            <input id='userinput' type='number' min='0' max='6' required/>
+            <button type='submit'>&#9994;</button>
+        </form>
+    </div>
+    <div id="score-area">
+        <h3 id='user-score'></h3>
+        <h3 id='computer-score'></h3>
+    </div>
+    <h2 id='result'></h2>
+
     <script src="index.js"></script>
 </body>
 
