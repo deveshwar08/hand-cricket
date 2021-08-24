@@ -12,13 +12,15 @@
     <h1>Hand Cricket</h1>
     <button onclick="start()">Replay</button>
     <div id="toss">
-            <input value='Heads' type='radio' name='toss' onclick='toss()'/>Heads
-            <input value='Tails' type='radio' name='toss' onclick='toss()'/>Tails
+            <input value='Heads' type='radio' name='toss' id='Heads'/><label for='Heads'>Heads</label>
+            <input value='Tails' type='radio' name='toss' id='Tails'/><label for='Tails'>Tails</label>
+            <button onclick='toss()'>Toss</button>
     </div>
     <div id='choice'>
         <h3>You won the toss</h3>
-            <input value="Batting" type="radio" name='choice' onclick="choice()"/>Batting
-            <input value='Bowling' type='radio' name='choice' onclick="choice()"/>Bowling
+            <input value="Batting" type="radio" name='choice' id='Batting'/><label for='Batting'>Batting</label>
+            <input value='Bowling' type='radio' name='choice' id='Bowling'/><label for='Bowling'>Bowling</label>
+            <button onclick="choice()">Choose</button>
     </div>
     <div id='game-area'>
         <h3>You are <span id='role'></span></h3>
